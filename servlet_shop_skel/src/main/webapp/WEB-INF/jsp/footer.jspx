@@ -1,0 +1,4 @@
+<!-- Using static include, so no need for anything else -->
+<footer>
+    <p> ThisIsFooter</p>
+</footer>

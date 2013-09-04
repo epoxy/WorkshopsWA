@@ -1,0 +1,98 @@
+/* 
+    Document   : style
+    Author     : hajo
+    Description: Colors fonts and tweeking NO layout
+*/
+
+body{
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:10px; 
+}
+
+header {
+    background-image:  url(../img/banner.jpg);
+    background-repeat: repeat;
+    background-position: center;
+    border-radius:25px;
+    box-shadow: 8px 8px 5px gainsboro
+}
+
+header h1{  
+    padding-top: 0.5em;
+    font-size: 40px;
+    font-family: fantasy;
+    font-style: italic;
+    font-weight: 900;
+    font-variant: small-caps;
+    color: white;
+    text-align: left;
+    margin-left: 0.5em;
+    vertical-align: middle;
+}
+
+header h2{  
+    margin-left: 1em;
+    vertical-align: middle;
+    font-size: 20px;
+}
+
+.menu {
+    background-color: #cc0000;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.menu ul li a{
+    color: white;
+    padding: 6px 11px; 
+    text-decoration: none;
+}
+
+.menu ul li a:visited{
+    color: #ffffcc;
+    text-decoration: none;
+}
+
+.menu ul li a:hover {
+    color: #fff;
+    background-color: lightcoral;
+}
+
+#submenu {
+    background-color: #ffcc66;
+
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+#submenu ul li a:hover {
+    color: #fff;
+    background-color: #ff9900;
+}
+
+#submenu ul li a{
+    color: black;
+}
+
+/* Colort for rows in table (alternating) */
+tr:nth-child(odd) { background-color:#fff; }
+tr:nth-child(even) { background-color:#eee; }
+
+footer {
+    background-color: #cc0000;
+    color: white;
+}
+
+table, thead, td {
+    /* background-color: blue;*/
+    border-width: 1px;
+    border-collapse: collapse;
+    border-style: solid;
+    padding: 4px;
+}
+
+#error {
+    font-size: 12px;
+    color: red;
+}

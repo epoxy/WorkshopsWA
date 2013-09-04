@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : login
+    Created on : Apr 22, 2013, 11:00:10 AM
+    Author     : hajo
+-->
+<jsp:root 
+    xmlns:jsp="http://java.sun.com/JSP/Page"
+    xmlns:c="http://java.sun.com/jsp/jstl/core"
+    xmlns="http://www.w3.org/1999/xhtml"
+    version="2.0">
+
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8" />
+    <jsp:output omit-xml-declaration="true" />
+    <jsp:output doctype-root-element="HTML" 
+                doctype-system="about:legacy-compat" />  
+
+
+    <head>
+        <title>Login</title> 
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" type="text/css" href="resources/css/layout.css" />
+        <link rel="stylesheet" type="text/css" href="resources/css/style.css" />
+    </head>
+    <body>
+        <jsp:directive.include file="header.jspx" />
+        <jsp:directive.include file="mainMenu.jspx" />
+        <form method="post" action="auth">
+            <input type="hidden" name="action" value="login" />
+            <fieldset>
+                <legend>Login</legend>
+                <c:if test="${param['auth-error']}" >
+                    <p id="error"> Authorization failed!</p>
+                </c:if>
+                <p>
+                    <label>User Name (qqq)</label>  
+                    <input type="text" name="name" maxlength="20"/>
+                    <label>Password (111)</label>  
+                    <input type="password" name="passwd" maxlength="20"/>
+                </p>
+                <p>
+                    <input type="submit" value="Login" /> 
+                </p>
+            </fieldset>  
+        </form> 
+        <jsp:directive.include file="footer.jspx" />
+    </body>
+</jsp:root>

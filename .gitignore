@@ -1,0 +1,9 @@
+/servlet_shop_skel/target/
+/shop/target/
+
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear

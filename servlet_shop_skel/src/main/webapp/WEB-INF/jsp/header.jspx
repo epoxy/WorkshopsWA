@@ -1,0 +1,8 @@
+<!-- Using static include, so no need for anything else -->
+<header>
+    <hgroup>
+        <h1>Fruitology</h1>
+        <h2>We taste better</h2>
+    </hgroup>
+</header>   
+

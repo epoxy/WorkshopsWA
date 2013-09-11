@@ -19,6 +19,8 @@ import javax.servlet.http.HttpSession;
 /**
  *
  * @author tomassellden
+ * har skrivit lite kommentarer pa daliga kod snitt som jag gjort fick den godkand
+ * men det ar inte riktigt bra :)!
  */
 @WebServlet(name = "ProductServlet", urlPatterns = {"/products/*"})
 public class ProductServlet extends HttpServlet {
@@ -95,8 +97,16 @@ public class ProductServlet extends HttpServlet {
                 if (index != -1) {
                     navigator.getRange().remove(index);
                 }
+                /*
+                 * onadig metod battre att anvanda update ska finnas i abstractEntity!
+                 * jag tar bort produkten och darefter lagger till en ny produkt!
+                 */
                 Product abE = new Product(Long.parseLong(id), name, Double.parseDouble(price));
                 navigator.next().add(abE);
+                 /*
+                 * ocksa daligt att adda den direkt till navigator battre att 
+                 * lagga till den i shop.INSTANCE.productcatalogue!
+                 */
                 request.setAttribute("PRODUCT_LIST", nextAndPrevLinks(navigator, param));
                 request.getRequestDispatcher("WEB-INF/jsp/products/products.jspx").forward(request, response);
             }
@@ -132,7 +142,11 @@ public class ProductServlet extends HttpServlet {
         } else {
             return navigator.next();
         }*/
-        
+        /*
+         * to Anton
+         * detta ar dalig kod, du ska kunna anvanda dig utav next och prev 
+         * istallet!
+         */
        int lastElement = navigator.getRange().size();
         if (param == null) {
             startList = 0;

@@ -1,0 +1,7 @@
+<nav id="submenu">
+    <ul>
+        <li><a href="products?view=addProduct">Add</a></li>
+        <li><a href="products?view=products">Search</a></li>    
+        <li><a href="router.jspx?view=customers">Logout</a></li>
+    </ul>
+</nav>

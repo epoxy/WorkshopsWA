@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : delProduct
+    Created on : Sep 11, 2013, 3:45:19 PM
+    Author     : Epoxy
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+    <html>
+        <head>
+            <title>Edit Product</title> 
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+            <link rel="stylesheet" type="text/css" href="resources/css/layout.css" />
+            <link rel="stylesheet" type="text/css" href="resources/css/style.css" />
+        </head>
+        <body>
+            <jsp:directive.include file="../header.jspx" />
+            <jsp:directive.include file="../mainMenu.jspx"/>
+            <jsp:directive.include file="subMenu.jspx"/>
+            <section id="pageSection">
+                <form id="frmItem" action="products?action=editItem&amp;fruitId=${requestScope.fruitId}" method="post">
+                    <fieldset>
+                        <legend>Edit</legend>
+                        <p>
+                            <label>Item to edit: ${requestScope.fruitId}</label>
+                        </p>
+                            <label>Name (string)</label>
+                            <!-- Must set value for required XML? -->
+                            <input id="idName" type="text" name="name" required="required" />
+                            <label>Price (double)</label>
+                            <input id="idPrice" type="text" name="price" required="required"/>
+                        <p>
+                            <button type="submit">Update</button>
+                        </p>
+                    </fieldset>
+                </form> 
+            </section>
+            <jsp:directive.include file="../footer.jspx" />
+        </body>
+    </html>   
+    <jsp:element name="text">
+        <jsp:attribute name="lang">EN</jsp:attribute>
+        <jsp:body>Hello World!</jsp:body>
+    </jsp:element>
+
+</jsp:root>

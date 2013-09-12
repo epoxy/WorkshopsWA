@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : products
+    Created on : Sep 4, 2013, 2:43:18 PM
+    Author     : Epoxy
+-->
+<jsp:root 
+    xmlns:jsp="http://java.sun.com/JSP/Page"
+    xmlns:c="http://java.sun.com/jsp/jstl/core"
+    xmlns="http://www.w3.org/1999/xhtml"
+    version="2.0">
+
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+    <jsp:output omit-xml-declaration="true" />
+    <jsp:output doctype-root-element="HTML" 
+                doctype-system="about:legacy-compat" />
+    <html>
+        <head>
+            <title>Products</title> 
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+            <link rel="stylesheet" type="text/css" href="resources/css/layout.css" />
+            <link rel="stylesheet" type="text/css" href="resources/css/style.css" />
+        </head>
+        <body>
+            <!-- Static content so use static include (other option is jsp:include) -->
+            <jsp:directive.include file="../header.jspx" />
+            <jsp:directive.include file="../mainMenu.jspx"/>
+            <jsp:directive.include file="subMenu.jspx" />
+            
+            <section>
+                <a href="products?view=prev">Prev</a>
+                <a href="products?view=next">Next</a>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Id</td>
+                            <td>Name</td>
+                            <td>Price</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <c:forEach var="i" items="${sessionScope.PRODUCT_LIST}">
+                            <tr>
+                                <td>${i.id}</td>
+                                <td>${i.name}</td>
+                                <td>${i.price}</td>
+                                <td><a href="products?view=editProduct&amp;id=${i.id}">Edit</a></td>
+                                <td><a href="products?view=delProduct&amp;id=${i.id}">Del</a></td>
+                            </tr>
+                        </c:forEach>
+                    </tbody>
+                </table>
+            </section>
+            <jsp:directive.include file="../footer.jspx" />
+        </body>
+    </html>
+</jsp:root>

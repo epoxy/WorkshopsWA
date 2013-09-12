@@ -26,18 +26,18 @@
             <jsp:directive.include file="../mainMenu.jspx"/>
             <jsp:directive.include file="subMenu.jspx"/>
             <section id="pageSection">
-                <form action="products" method="POST">
+                <form id="frmItem" action="products?action=addItem" method="post">
                     <fieldset>
                         <legend>Product</legend>
                         <p>
                             <input type="hidden" name="action" value="add"/>
                             <label>Id (int)</label>
-                            <input type="text" name="id" value="Set by database" disabled="true"/>
+                            <input id="idId" type="text" name="id" value="Set by database" disabled="true"/>
                             <label>Name (string)</label>
                             <!-- Must set value for required XML? -->
-                            <input type="text" name="name" required="required" />
+                            <input id="idName" type="text" name="name" required="required" />
                             <label>Price (double)</label>
-                            <input type="text" name="price" required="required"/>
+                            <input id="idPrice" type="text" name="price" required="required"/>
                             <br/>
                         </p>
                         <p>

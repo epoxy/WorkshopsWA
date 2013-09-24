@@ -28,4 +28,6 @@ public interface IEntityContainer<T extends IEntity<K>, K> {
     public List<T> getRange(int first, int nItems);
 
     public int getCount();
+
+    public void remove(double id);
 }

@@ -7,3 +7,6 @@
 *.jar
 *.war
 *.ear
+/basic_jaxb_jaxrs/target/
+/service_based/target/
+/ws_shop_skel/target/

@@ -46,6 +46,7 @@ public class ProductServlet extends HttpServlet {
         if(request.getSession().getAttribute("containerNavigator")==null){
             //Skapar CN samt lägger till den till sessionen
             out.println("cn måste skapas");
+//            this.getServletContext().getAttribute(Keys.SHOP.toString());
             cN = new ContainerNavigator(0, 3, Shop.INSTANCE.getProductCatalogue());
             request.getSession().setAttribute("containerNavigator", cN);
         }
@@ -64,16 +65,16 @@ public class ProductServlet extends HttpServlet {
                     prodName = request.getParameter("name");
                     price = Double.parseDouble(request.getParameter("price"));
                     cN.getRange().add(new Product(prodName, price));
-                    request.getSession().setAttribute("containerNavigator", cN);
+//                    request.getSession().setAttribute("containerNavigator", cN);
                     response.sendRedirect("/servlet_shop/products?view=addProduct");
                     break;
-                case "delItem":
+                case "delItem": 
                     fruitId = Double.parseDouble(request.getParameter("fruitId"));
                     Logger.getAnonymousLogger().log(Level.INFO, "fruit ID" + fruitId);
                     int indexOfFruitToRemove = findIndexOfFruit(cN, fruitId);
                     Logger.getAnonymousLogger().log(Level.INFO, "fruit pos" + indexOfFruitToRemove);
                     //TODO Fixa så att sidan visas efter att containern uppdaterats
-                    request.getSession().setAttribute("containerNavigator", cN);
+//                    request.getSession().setAttribute("containerNavigator", cN);
                     //request.getRequestDispatcher("WEB-INF/jsp/products/products.jspx").forward(request, response);
                     if(indexOfFruitToRemove!=-1){
                         cN.getRange().remove(indexOfFruitToRemove);
@@ -89,7 +90,7 @@ public class ProductServlet extends HttpServlet {
                         Product p = new Product((long)fruitId, prodName, price);
                         cN.getRange().set(indexOfFruitToEdit, p);
                     }
-                    request.getSession().setAttribute("containerNavigator", cN);
+//                    request.getSession().setAttribute("containerNavigator", cN);
                     response.sendRedirect("/servlet_shop/products?view=this");
                     Logger.getAnonymousLogger().log(Level.INFO, "EDIT ITEM");
                     
@@ -103,7 +104,7 @@ public class ProductServlet extends HttpServlet {
             //Logger.getAnonymousLogger().log(Level.INFO, "VIEW");
             switch (view){
                 case "prev":
-                    request.getSession().setAttribute("PRODUCT_LIST", cN.previous());
+                    cN.previous();
                     request.getRequestDispatcher("WEB-INF/jsp/products/products.jspx").forward(request, response);
                     break;
                 case "next":

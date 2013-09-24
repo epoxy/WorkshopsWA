@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<faces-config version="2.0"
+              xmlns="http://java.sun.com/xml/ns/javaee" 
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+              xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+    <application>
+	  <message-bundle>
+	  	<!-- If customizing messages -->
+	  </message-bundle>
+     </application>
+    <!-- Main menu on all pages -->
+    <navigation-rule>
+        <from-view-id>*</from-view-id> 
+        <navigation-case>
+            <from-outcome>home</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>products</from-outcome>
+            <to-view-id>/jsf/products/products.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>customers</from-outcome>
+            <to-view-id>/jsf/customers/customers.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>orders</from-outcome>
+            <to-view-id>/jsf/orders/orders.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <!-- Product pages -->
+    <navigation-rule>
+        <from-view-id>/jsf/products/products.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>add</from-outcome>
+            <to-view-id>/jsf/products/addProduct.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>edit</from-outcome>
+            <to-view-id>/jsf/products/editProduct.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>del</from-outcome>
+            <to-view-id>/jsf/products/deleteProduct.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule> 
+    <!-- Login -->
+    <navigation-rule>
+        <from-view-id>/jsf/login.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>login-success</from-outcome>
+            <to-view-id>/jsf/products/products.xhtml</to-view-id> 
+            <redirect/> 
+        </navigation-case> 
+        <navigation-case>
+            <from-outcome>login-fail</from-outcome>
+            <to-view-id>/jsf/login.xhtml</to-view-id>  
+        </navigation-case> 
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/jsf/products/products.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>logout-success</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>  
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    
+</faces-config>

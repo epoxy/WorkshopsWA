@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <h:body>
+
+        <ui:composition template="/WEB-INF/template.xhtml">
+
+            <ui:define name="content">
+                <h3>Edit product</h3>
+                <h:form>
+                    <h:panelGrid columns="3">
+                        <h:outputText value="Id" />
+                        <h:inputText id="id" value="#{editProduct.id}" disabled="true"/>
+                        <h:message for="id" />
+                        <h:outputText value="Name old name was #{editProduct.name} " />
+                        <h:inputText id="name" value="#{editProduct.name}"/>
+                        <h:message for="name" />
+                        <h:outputText value="Price old price was #{editProduct.price}" />
+                        <h:inputText id="price" value="#{editProduct.price}"/>
+                        <h:message for="price" />
+                    </h:panelGrid>
+                    <h:button outcome="products" value="Cancel"/>                   
+                    <h:commandButton action="#{editProduct.actOnSelected}" value="Save" />
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

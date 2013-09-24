@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="jsf/products/addProduct.xhtml" x="584" y="404" zoom="true"/>
+        <Node id="index.xhtml" x="281" y="44" zoom="true"/>
+        <Node id="jsf/products/editProduct.xhtml" x="219" y="417" zoom="true"/>
+        <Node id="jsf/products/deleteProduct.xhtml" x="408" y="450" zoom="true"/>
+        <Node id="*" x="533" y="27" zoom="true"/>
+        <Node id="jsf/orders/orders.xhtml" x="10" y="186" zoom="true"/>
+        <Node id="jsf/customers/customers.xhtml" x="743" y="100" zoom="true"/>
+        <Node id="jsf/login.xhtml" x="840" y="342" zoom="true"/>
+        <Node id="jsf/products/products.xhtml" x="448" y="199" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>
